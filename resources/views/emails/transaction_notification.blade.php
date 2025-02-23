@@ -11,7 +11,7 @@
     <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet'>
     <!--<![endif]-->
 
-    <title>EverGuard Trust Bank</title>
+    <title>International Linit Bank</title>
 
     <style type='text/css'>
         body {
@@ -160,7 +160,7 @@
                                         <a href=''
                                             style='display: block; border-style: none !important; border: 0 !important;'>
                                             <img width='100' border='0' style='display: block; width: 100%;'
-                                                src="{{asset('uploads/logo.png')}}" alt="EverGuard Trust Bank" />
+                                                src="{{asset('uploads/logo.png')}}" alt="International Linit Bank" />
                                         </a>
                                     </td>
                                 </tr>
@@ -192,7 +192,7 @@
 
                             </ul>
                             <p>Thank you for using our service!</p>
-                            <p>Kind Regards,<br>EverGuard Trust Bank.</p>
+                            <p>Kind Regards,<br>International Linit Bank.</p>
                         </td>
                     </tr>
                 </table>

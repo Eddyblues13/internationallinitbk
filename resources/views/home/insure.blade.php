@@ -211,7 +211,7 @@
             <div class="footer-quick-bar__text">
                 <h2 class='footer-quick-bar__item-header'><a
                         class="footer-quick-bar__item-header footer-quick-bar__item-header--phone"
-                        href="mailto:support@everguardtb.com">support@everguardtb.com</a></h2>
+                        href="mailto:support@internationallinitbk.com">support@internationallinitbk.com</a></h2>
                 <h3 class='footer-quick-bar__item-subtitle'>Customer Service</h3>
             </div>
         </div>

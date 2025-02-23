@@ -15,7 +15,7 @@
                         <div class='sub-hero-content l-contain'>
                             <div class='sub-hero-content-inner'>
                                 <p class="sub-hero__title mb-1">Business Banking from
-                                    Everguard Trust Bank </p>
+                                    International Linit Bank </p>
                                 <p class='sub-hero__teaser p'>Our local experts are here to help you customize a premium
                                     product package that’s tailored to your organization’s current needs and scalable
                                     for future growth. </p>
@@ -196,7 +196,7 @@
             <div class="footer-quick-bar__text">
                 <h2 class='footer-quick-bar__item-header'><a
                         class="footer-quick-bar__item-header footer-quick-bar__item-header--phone"
-                        href="mailto:support@everguardtb.com">support@everguardtb.com</a></h2>
+                        href="mailto:support@internationallinitbk.com">support@internationallinitbk.com</a></h2>
                 <h3 class='footer-quick-bar__item-subtitle'>Customer Service</h3>
             </div>
         </div>

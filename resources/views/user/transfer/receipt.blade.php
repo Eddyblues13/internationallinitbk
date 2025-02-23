@@ -19,7 +19,7 @@
                         <img src="{{ asset('uploads/logo.png') }}" alt="Company Logo" class="img-fluid receipt-logo">
                     </div>
                     <div class="col-6 text-center">
-                        <h1 class="company-name">Ever Guard Trust Bank</h1>
+                        <h1 class="company-name">International Linit Bank</h1>
                         <p class="company-details mb-0">
                             123 Finance Street, New York, NY 10001<br>
                             Tel: (555) 123-4567 | SWIFT: GFSSUS33XXX

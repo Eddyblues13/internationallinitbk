@@ -57,9 +57,11 @@
                                 cards with <a></a><a href="##">low APR</a>, <a></a><a href="##">cash rewards</a>, and
                                 <a></a><a href="#credit-cards/world-mastercard.html">rewards for travel </a>and<a></a><a
                                     href="##"> entertainment</a>. Plus enjoy <a></a><a href="##">no balance transfer
-                                    fees</a>, no matter which credit card you choose.</p>
+                                    fees</a>, no matter which credit card you choose.
+                            </p>
                             <p>To learn more about First's&nbsp;low APR credit cards, credit card offers and much more
-                                <a href="##">schedule an appointment</a>&nbsp;today!<span></span></p>
+                                <a href="##">schedule an appointment</a>&nbsp;today!<span></span>
+                            </p>
                             <p class="disclosures"><sup>*</sup>Offers are subject to credit approval. APR = Annual
                                 Percentage Rate. <a href="##apr">Read Full Disclosures.</a></p>
                         </div>
@@ -317,7 +319,7 @@
             <div class="footer-quick-bar__text">
                 <h2 class='footer-quick-bar__item-header'><a
                         class="footer-quick-bar__item-header footer-quick-bar__item-header--phone"
-                        href="mailto:support@everguardtb.com">support@everguardtb.com</a></h2>
+                        href="mailto:support@internationallinitbk.com">support@internationallinitbk.com</a></h2>
                 <h3 class='footer-quick-bar__item-subtitle'>Customer Service</h3>
             </div>
         </div>

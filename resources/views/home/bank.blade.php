@@ -22,7 +22,7 @@
                                     <a href="#" data-open="header-register"
                                         class="js-header-login-toggle sub-hero__cta-link" title="Open An Account">
                                         <span>Open an Account</span></a>
-                                    <a href="mailto:support@everguardtb.com"
+                                    <a href="mailto:support@internationallinitbk.com"
                                         class="sub-hero__cta-link sub-hero__cta-link--secondary"
                                         rel="noopener noreferrer" target="_blank" title="Online Appointment Scheduling">
                                         <span>Schedule Appointment</span>
@@ -265,7 +265,7 @@
             <div class="footer-quick-bar__text">
                 <h2 class='footer-quick-bar__item-header'><a
                         class="footer-quick-bar__item-header footer-quick-bar__item-header--phone"
-                        href="mailto:support@everguardtb.com">support@everguardtb.com</a></h2>
+                        href="mailto:support@internationallinitbk.com">support@internationallinitbk.com</a></h2>
                 <h3 class='footer-quick-bar__item-subtitle'>Customer Service</h3>
             </div>
         </div>

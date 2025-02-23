@@ -77,7 +77,7 @@
                             Transfer </h5>
                         <hr>
                         <h5 class="modal-title text-primary">
-                            EverGuard Trust Bank
+                            International Linit Bank
                             Transfer<br><small><span class="text-danger">Note:</span> Transactions Fee is
                                 1%
                             </small>
@@ -317,7 +317,7 @@
                                         class="fas fa-piggy-bank image-block imaged w48 text-warning"></span>
                                     <div> <strong>Auto Save</strong>
                                         <p>Set a goal, save automatically with
-                                            Everguard Trust Bank's Auto Save and track your progress.
+                                            International Linit Bank's Auto Save and track your progress.
                                         </p>
                                     </div>
                                 </div>

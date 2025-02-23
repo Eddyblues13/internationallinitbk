@@ -63,7 +63,7 @@
                             <li class='footer-services__nav-item'><a href='#' class='footer-services__nav-link'>First
                                     Security<sup>&trade;</sup></a></li>
 
-                            <li class='footer-services__nav-item'><a href='mailto:support@everguardtb.com'
+                            <li class='footer-services__nav-item'><a href='mailto:support@internationallinitbk.com'
                                     class='footer-services__nav-link'>Email Us</a></li>
                         </ul>
                         <img src="{{asset('uploads/logo.png')}}" width="255" alt="First New Logo" />
@@ -94,7 +94,7 @@
 
                 <div class='footer-site-links__right'>
                     <a href="#" target="_blank"><img src="templates/bank-pro/blue-seal-200-42-bbb-80015515.png"
-                            style="border: 0;" alt="Everguard Trust Bank BBB Business Review" /></a>
+                            style="border: 0;" alt="International Linit Bank BBB Business Review" /></a>
                     <a href='#' class='footer-site-links__ncua-link footer-site-links__ncua-link--lender'><img
                             src='templates/bank-pro/images/assets/ncua-lender.png' alt='Lender'></a>
                     <a href='#' class='footer-site-links__ncua-link footer-site-links__ncua-link--lender'><img
@@ -123,6 +123,6 @@
 
 
 
-<!-- Mirrored from everguardtb.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Feb 2025 14:25:19 GMT -->
+<!-- Mirrored from internationallinitbk.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Feb 2025 14:25:19 GMT -->
 
 </html>

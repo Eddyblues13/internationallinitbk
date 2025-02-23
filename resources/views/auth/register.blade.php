@@ -8,16 +8,16 @@
     <!-- End Required meta tags -->
     <!-- Begin SEO tag -->
     <title>
-        Open Account | Everguard Trust Bank </title>
-    <meta property="og:title" content="Everguard Trust Bank">
-    <meta name="author" content="Everguard Trust Bank">
+        Open Account | International Linit Bank </title>
+    <meta property="og:title" content="International Linit Bank">
+    <meta name="author" content="International Linit Bank">
     <meta name="description" content="Mobile Banking, Credit Cards, Mortgages, Auto Loan">
     <meta name="keywords" content="First Citizen Bank">
     <meta property="og:locale" content="en_US">
     <meta property="og:description" content="Mobile Banking, Credit Cards, Mortgages, Auto Loan">
     <meta name="og:keywords" content="First Citizen Bank">
     <meta property="og:url" content="https://fccub.com">
-    <meta property="og:site_name" content="Everguard Trust Bank">
+    <meta property="og:site_name" content="International Linit Bank">
     <meta property="og:image" content="https://fccub.com/uploads/logo.png" />
     <link rel="canonical" href="https://fccub.com">
     <!-- favicon & bookmark -->

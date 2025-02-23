@@ -93,7 +93,7 @@
                                                 </div>
                                                 <div class="h5 text-center">Expert Guidance</div>
                                                 <p class="text-center">Tap into
-                                                    Everguard Trust BankResearch Footnote for help adapting your
+                                                    International Linit BankResearch Footnote for help adapting your
                                                     investment strategy to changes in the markets and in your life.</p>
 
                                             </div>
@@ -102,7 +102,8 @@
                                                 </div>
                                                 <div class="h5 text-center">Personal Connection</div>
                                                 <p class="text-center">Work with a
-                                                    Everguard Trust BankAdvisor to develop a personalized strategy to
+                                                    International Linit BankAdvisor to develop a personalized strategy
+                                                    to
                                                     help you meet your most important goals. </p>
 
                                             </div>
@@ -118,7 +119,7 @@
                                     <div class="col-lg-8">
                                         <h2>Stay informed with research that sets the standard</h2>
                                         <p>
-                                            Everguard Trust Bankanalysts deliver comprehensive market research that
+                                            International Linit Bankanalysts deliver comprehensive market research that
                                             leads
                                             the industry. Browse the latest insights, like market performance over time
                                             Footnote, to help you make informed investment decisions.</p>
@@ -347,7 +348,7 @@
                                         class="fas fa-piggy-bank image-block imaged w48 text-warning"></span>
                                     <div> <strong>Auto Save</strong>
                                         <p>Set a goal, save automatically with
-                                            Everguard Trust Bank's Auto Save and track your progress.
+                                            International Linit Bank's Auto Save and track your progress.
                                         </p>
                                     </div>
                                 </div>

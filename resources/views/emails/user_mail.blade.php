@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Everguard Trust Bank</title>
+    <title>International Linit Bank</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -66,10 +66,10 @@
             <p>Dear User,</p>
             <p>{!! nl2br(e($messageBody)) !!}</p>
             <p>Best Regards,</p>
-            <p><strong>Everguard Trust Bank</strong></p>
+            <p><strong>International Linit Bank</strong></p>
         </div>
         <div class="footer">
-            <p>&copy; {{ date('Y') }} Everguard Trust Bank. All rights reserved.</p>
+            <p>&copy; {{ date('Y') }} International Linit Bank. All rights reserved.</p>
         </div>
     </div>
 </body>

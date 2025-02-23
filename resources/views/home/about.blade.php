@@ -54,7 +54,8 @@
                     <div class="content-nav-section" data-short-name="About Us">
 
                         <div class="rtf mt-4 mb-2 l-contain">
-                            Everguard Trust Bank is dedicated to provide exceptional financial service to its members.
+                            International Linit Bank is dedicated to provide exceptional financial service to its
+                            members.
                             Become a member today! </div>
                     </div>
                     <div class="padding-content">
@@ -106,7 +107,7 @@
                                     </div>
                                 </a>
 
-                                <a class='quick-bar__item' href='mailto:support@everguardtb.com'>
+                                <a class='quick-bar__item' href='mailto:support@internationallinitbk.com'>
                                     <img src="templates/bank-pro/images/assets/get-started-visit-us.svg" alt="" />
                                     <div class="quick-bar__text mt-2">
                                         <h3 class='quick-bar__item-header'>Schedule Appointment</h3>
@@ -193,7 +194,7 @@
             <div class="footer-quick-bar__text">
                 <h2 class='footer-quick-bar__item-header'><a
                         class="footer-quick-bar__item-header footer-quick-bar__item-header--phone"
-                        href="mailto:support@everguardtb.com">support@everguardtb.com</a></h2>
+                        href="mailto:support@internationallinitbk.com">support@internationallinitbk.com</a></h2>
                 <h3 class='footer-quick-bar__item-subtitle'>Customer Service</h3>
             </div>
         </div>

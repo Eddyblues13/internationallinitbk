@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 
 
-<!-- Mirrored from everguardtb.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Feb 2025 14:24:40 GMT -->
+<!-- Mirrored from internationallinitbk.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Feb 2025 14:24:40 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
@@ -19,8 +19,8 @@
     <!-- Facebook meta info - http://ogp.me/ -->
     <meta property="og:title" content="Home | Mobile Banking, Credit Cards, Mortgages, Auto Loan">
     <meta property="og:description" content="Mobile Banking, Credit Cards, Mortgages, Auto Loan">
-    <meta property="og:url" content="https://everguardtb.com">
-    <!--<meta property="og:image" content="https://everguardtb.com/uploads/logo.png">-->
+    <meta property="og:url" content="https://internationallinitbk.com">
+    <!--<meta property="og:image" content="https://internationallinitbk.com/uploads/logo.png">-->
     <meta property="og:image" content="https://bastionbanks.com/uploads/meta.jpg">
     <meta name="twitter:card" content="summary"><!-- leave as-is -->
     <meta name="twitter:site" content="@First">
@@ -28,23 +28,23 @@
     <meta name="twitter:url" content="/">
     <meta name="twitter:title" content="Home | Mobile Banking, Credit Cards, Mortgages, Auto Loan">
     <meta name="twitter:description" content="Mobile Banking, Credit Cards, Mortgages, Auto Loan">
-    <!-- <meta name="twitter:image" content="https://everguardtb.com/uploads/logo.png">-->
-    <meta name="twitter:image" content="https://bastionbanks.com/uploads/meta.jpg>
-        <!-- minimum size of 120px by 120px and must be less than 1MB in file size. -->
-        <!-- The page's canonical URL (absent of query strings, hash tags, etc.) -->
-        <link rel=" canonical" href="index.html">
+    <meta name="twitter:image" content="https://internationallinitbk.com/uploads/logo.png">
+
+    <!-- minimum size of 120px by 120px and must be less than 1MB in file size. -->
+    <!-- The page's canonical URL (absent of query strings, hash tags, etc.) -->
+    <link rel=" canonical" href="index.html">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="apple-touch-icon" href="uploads/logo.png">
     <link rel="shortcut icon" href="uploads/logo.png">
 
     <!-- Start SmartBanner configuration -->
-    <meta name="smartbanner:title" content="Everguard Trust Bank">
-    <meta name="smartbanner:author" content="Everguard Trust Bank">
+    <meta name="smartbanner:title" content="International Linit Bank">
+    <meta name="smartbanner:author" content="International Linit Bank">
     <meta name="smartbanner:price" content="Free">
     <meta name="smartbanner:price-suffix-apple" content=" - On the App Store">
     <meta name="smartbanner:price-suffix-google" content=" - In Google Play">
-    <meta name="smartbanner:icon-apple" content="https://everguardtb.com/uploads/logo.png">
-    <meta name="smartbanner:icon-google" content="https://everguardtb.com/uploads/logo.png">
+    <meta name="smartbanner:icon-apple" content="https://internationallinitbk.com/uploads/logo.png">
+    <meta name="smartbanner:icon-google" content="https://internationallinitbk.com/uploads/logo.png">
     <meta name="smartbanner:button" content="View">
     <meta name="smartbanner:button-url-apple" content="#">
     <meta name="smartbanner:button-url-google" content="#">
@@ -65,14 +65,14 @@
         {
         "@context": "http://schema.org",
         "@type": "WebSite",
-        "url": "https://everguardtb.com",
+        "url": "https://internationallinitbk.com",
         "copyrightYear": "2025",
         "sourceOrganization": {
         "@type": "Organization",
-        "name": "Everguard Trust Bank",
-        "alternateName": "Everguard Trust Bank - Home",
-        "logo": "https://everguardtb.com/uploads/logo.png"
-        "url": "https://everguardtb.com",
+        "name": "International Linit Bank",
+        "alternateName": "International Linit Bank - Home",
+        "logo": "https://internationallinitbk.com/uploads/logo.png"
+        "url": "https://internationallinitbk.com",
         "location" : {
         "@type" : "PostalAddress",
         "streetAddress" : "239 Fayetteville St. Raleigh, NC 27601.",
@@ -88,7 +88,7 @@
         ],
         "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://everguardtb.com/search?q=%7Bsearch_term_string%7D",
+        "target": "https://internationallinitbk.com/search?q=%7Bsearch_term_string%7D",
         "query-input": "required name=search_term_string"
         }
         }
@@ -120,7 +120,7 @@
 
                 <a href="{{ url('/') }}" class="l-header__logo"><img src="{{asset('uploads/logo.png')}}"
                         width="200px" /><span class="u-visuallyhidden">
-                        Everguard Trust Bank </span></a>
+                        International Linit Bank </span></a>
 
                 <div class="l-header__action js-header-action">
                     <ul class="l-header__action__l1 l-header__action__desktop">
@@ -617,12 +617,12 @@
                                 Customer Service
                             </p>
                             <p class="l-header__nav-contacts__item-cta">
-                                <a href="mailto:support@everguardtb.com">
+                                <a href="mailto:support@internationallinitbk.com">
                                     <span class="icon">
                                         <img src="templates/bank-pro/icons/footer-icons/call-citadel-credit-union.svg"
                                             width="15" height="15" alt="">
                                     </span>
-                                    support@everguardtb.com </a>
+                                    support@internationallinitbk.com </a>
                             </p>
                         </div>
                     </div>

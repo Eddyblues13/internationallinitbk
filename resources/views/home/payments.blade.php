@@ -16,7 +16,8 @@
                             <div class='sub-hero-content-inner'>
                                 <p class="sub-hero__title mb-1">Easy & Secure Loan Payments</p>
                                 <p class='sub-hero__teaser p'>Thank you for choosing
-                                    Everguard Trust Bank as your lending partner. Pay your loan now or set up automatic
+                                    International Linit Bank as your lending partner. Pay your loan now or set up
+                                    automatic
                                     payments.
                                 </p>
 
@@ -175,7 +176,7 @@
             <div class="footer-quick-bar__text">
                 <h2 class='footer-quick-bar__item-header'><a
                         class="footer-quick-bar__item-header footer-quick-bar__item-header--phone"
-                        href="mailto:support@everguardtb.com">support@everguardtb.com</a></h2>
+                        href="mailto:support@internationallinitbk.com">support@internationallinitbk.com</a></h2>
                 <h3 class='footer-quick-bar__item-subtitle'>Customer Service</h3>
             </div>
         </div>
