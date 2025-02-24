@@ -661,7 +661,7 @@
                     @csrf
 
                     <div class="login-form__field js-form-field">
-                        <label for="user_id">Account ID</label>
+                        <label for="user_id">Email or Account ID</label>
                         <input name="login" type="text" class="input-text" required>
                     </div>
                     <div class="login-form__field js-form-field">
