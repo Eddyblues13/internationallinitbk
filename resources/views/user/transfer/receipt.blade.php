@@ -15,15 +15,14 @@
             <!-- Receipt Header -->
             <div class="receipt-header mb-4 border-bottom pb-4">
                 <div class="row align-items-center">
-                    <div class="col-3">
+                    <div class="col-3 text-center p-3"
+                        style="background: linear-gradient(135deg, #1a237e, #0d47a1); border-radius: 10px;">
                         <img src="{{ asset('uploads/logo.png') }}" alt="Company Logo" class="img-fluid receipt-logo">
                     </div>
+
                     <div class="col-6 text-center">
                         <h1 class="company-name">International Linit Bank</h1>
-                        <p class="company-details mb-0">
-                            123 Finance Street, New York, NY 10001<br>
-                            Tel: (555) 123-4567 | SWIFT: GFSSUS33XXX
-                        </p>
+
                     </div>
                     <div class="col-3 text-right">
                         <div class="watermark">PAID</div>

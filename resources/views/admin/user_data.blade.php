@@ -97,6 +97,14 @@
                                     <span class="badge badge-danger">Inactive</span>
                                     @endif
                                 </div>
+                                <!-- Buttons to trigger modals -->
+                                <div class="col-md-3">
+                                    <h5>View Documents</h5>
+                                    <button class="btn btn-primary btn-sm" data-toggle="modal"
+                                        data-target="#passportModal">View Passport</button>
+                                    <button class="btn btn-secondary btn-sm" data-toggle="modal"
+                                        data-target="#kycModal">View KYC</button>
+                                </div>
                                 <div class="col-md-3">
                                     <h5>Email Verification Status</h5>
                                     @if($user->email_status == 1)
@@ -563,57 +571,49 @@
 
 
 
-    <!-- Top Up Modal -->
-    <div id="topupxModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
+    <!-- Passport Modal -->
+    <div class="modal fade" id="passportModal" tabindex="-1" role="dialog" aria-labelledby="passportModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-light">
-                    <h4 class="modal-title text-dark">Fund/Debit {{$user->first_name}} WALLET.</strong></h4>
-                    <button type="button" class="close text-dark" data-dismiss="modal">&times;</button>
+                <div class="modal-header">
+                    <h5 class="modal-title">User Passport</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="modal-body bg-light">
-                    <form action="" method="POST" enctype="multipart/form-data">
-                        {{ csrf_field()}}
-                        <div class="form-group">
-                            <input class="form-control bg-light text-dark" placeholder="Enter amount" type="text"
-                                name="amount" required>
-                        </div>
-                        <div class="form-group">
-                            <h5 class="text-dark">Select Wallet to Credit/Debit</h5>
-                            <select class="form-control bg-light text-dark" name="type" required>
-                                <option value="" selected disabled>Select Wallet</option>
-                                <option value="Bitcoin">Bitcoin</option>
-                                <option value="Ethereum">Ethereum</option>
-                                <option value="LTC">LTC</option>
-                                <option value="BNB">BNB</option>
-                                <option value="Doge">Doge</option>
-                                <option value="USDT">USDT</option>
-                                <option value="Dash">Dash</option>
-                                <option value="Tron">Tron</option>
-                                <option value="XRP">XRP</option>
-                                <option value="EOS">EOS</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <h5 class="text-dark">Select credit to add, debit to subtract.</h5>
-                            <select class="form-control bg-light text-dark" name="t_type" required>
-                                <option value="">Select type</option>
-                                <option value="Credit">Credit</option>
-                                <option value="Debit">Debit</option>
-                            </select>
-                            <small> <b>NOTE:</b> You cannot debit deposit</small>
-                        </div>
-                        <div class="form-group">
-                            <input type="hidden" name="user_id" value="151">
-                            <input type="submit" class="btn btn-primary" value="Submit">
-                        </div>
-                    </form>
+                <div class="modal-body text-center">
+                    @if($user->passport_path)
+                    <img src="{{ asset($user->passport_path) }}" class="img-fluid" alt="User Passport">
+                    @else
+                    <p class="text-danger">No Passport Uploaded</p>
+                    @endif
                 </div>
             </div>
         </div>
     </div>
-    <!-- /deposit for a plan Modal -->
+
+    <!-- KYC Modal -->
+    <div class="modal fade" id="kycModal" tabindex="-1" role="dialog" aria-labelledby="kycModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">User KYC Document</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    @if($user->kyc_path)
+                    <img src="{{ asset($user->kyc_path) }}" class="img-fluid" alt="User KYC">
+                    @else
+                    <p class="text-danger">No KYC Document Uploaded</p>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
