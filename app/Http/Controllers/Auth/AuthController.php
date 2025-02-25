@@ -154,32 +154,22 @@ class AuthController extends Controller
             'last_login_user_agent'  => $userAgent
         ]);
 
-        $user = Auth::user();
-
-        $full_name = $user->name;
-        $email = $user->email;
-        $login_id = $user->login_id; // Assuming 'login_id' exists in the users table
-        $password = $user->password; // Be cautious; never expose raw passwords!
-        $account_number = $user->account_number; // Assuming 'account_number' exists
 
 
-
-
+        // Send welcome email
         $wMessage = "<p style='line-height: 24px;margin-bottom:15px;'>
-                Hello $full_name,
-                </p>
-                <br>
-                <p>We are so happy to have you on board, and thank you for joining us.</p>
-                <br>
-                <p><strong>Login ID:</strong> $login_id </p>
-                  <p><strong>Email Address:</strong>  $email </p>
-                <p><strong>Account Number:</strong> $account_number</p>
-                <br>
-                <p>Don't hesitate to get in touch if you have any questions; we'll always get back to you</p>";
+       Hello {$user->name},
+    </p>
+    <br>
+    <p>We are so happy to have you on board, and thank you for joining us.</p>
+    <br>
+    <p><strong>Login ID:</strong> {$user->login_id} </p>
+    <p><strong>Email Address:</strong>  {$user->email} </p>
+    <p><strong>Account Number:</strong> {$user->account_number}</p>
+    <br>
+    <p>Don't hesitate to get in touch if you have any questions; we'll always get back to you</p>";
 
-
-
-        Mail::to($email)->send(new WelcomeEmail($wMessage));
+        Mail::to($user->email)->send(new WelcomeEmail($wMessage));
 
         // Send verification email if needed
         // $this->sendVerificationEmail($user);
