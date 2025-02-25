@@ -146,12 +146,13 @@ class AuthController extends Controller
         ]);
 
 
+
         // Log user activity
         Activity::create([
-            'user_id'                => $user->id,
-            'last_login_at'          => Carbon::now()->toDateTimeString(),
-            'last_login_ip'          => $request->getClientIp(),
-            'last_login_user_agent'  => $userAgent
+            'user_id' => $user->id,
+            'last_login_at' => Carbon::now()->toDateTimeString(),
+            'last_login_ip' => $request->getClientIp(),
+            'last_login_user_agent' => $userAgent
         ]);
 
 
