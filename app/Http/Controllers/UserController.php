@@ -47,7 +47,12 @@ class UserController extends Controller
             ->whereYear('created_at', Carbon::now()->year)
             ->where('type', 'debit')
             ->sum('amount');
-        $data['activity'] = Activity::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->skip(1)->take(1)->first();
+        $data['activity'] = Activity::where('user_id', Auth::user()->id)
+            ->orderBy('created_at', 'desc')
+            ->skip(1)
+            ->take(1)
+            ->first() ?? null;
+
         $data['clientIpAddress'] = $request->getClientIp();
         $data['userIp'] = $request->ip();
         $data['location'] = Location::get($data['userIp']);

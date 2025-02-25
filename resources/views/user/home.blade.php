@@ -25,10 +25,13 @@
                                     <div class="bottom">
                                         <div class="card-expiry">
                                             <span class="label">Last Login <br></span>
-                                            {{ $activity->last_login_at
-                                            ? \Carbon\Carbon::parse($activity->last_login_at)->format('d M y, gA')
-                                            : 'Never logged in' }}
+                                            @if($activity && $activity->last_login_at)
+                                            {{ \Carbon\Carbon::parse($activity->last_login_at)->format('d M y, gA') }}
+                                            @else
+                                            Never logged in
+                                            @endif
                                         </div>
+
 
 
 
