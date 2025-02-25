@@ -251,6 +251,7 @@ Route::prefix('admin')->group(function () {
         // Route for changing email user
         Route::get('/send/email', [App\Http\Controllers\Admin\AdminController::class, 'sendEmailPage'])->name('send.email');
         Route::post('/send/email', [App\Http\Controllers\Admin\AdminController::class, 'sendEmail'])->name('send.mail');
+        Route::post('/send-email-all', [App\Http\Controllers\Admin\AdminController::class, 'sendEmailToAllUsers'])->name('send.email.all');
 
 
         // Route for changing email user

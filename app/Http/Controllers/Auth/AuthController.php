@@ -220,7 +220,6 @@ class AuthController extends Controller
      * Handle user login.
      */
 
-
     public function login(Request $request)
     {
         // Get the user agent string
@@ -247,11 +246,11 @@ class AuthController extends Controller
                 'last_login_user_agent'  => $userAgent
             ]);
 
-            return redirect()->route('home')->with('success', 'Logged in successfully!'); // Redirect to dashboard
+            return redirect()->route('home')->with('success', 'Logged in successfully!'); // Success message
         }
 
         // If login fails, redirect back with an error
-        return redirect()->back()->withErrors(['login' => 'Invalid login credentials'])->withInput();
+        return redirect()->back()->with('error', 'Invalid login credentials')->withInput();
     }
 
 

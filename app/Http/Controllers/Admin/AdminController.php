@@ -354,6 +354,9 @@ class AdminController extends Controller
 
 
 
+
+
+
     public function suspendAccount(Request $request, $id)
     {
         $user = User::find($id);
@@ -921,5 +924,21 @@ class AdminController extends Controller
         Mail::to($email)->send(new sendUserEmail($subject, $messageBody));
 
         return back()->with('message', 'Email sent successfully!');
+    }
+
+    public function sendEmailToAllUsers(Request $request)
+    {
+        $request->validate([
+            'subject' => 'required|string|max:255',
+            'message' => 'required|string',
+        ]);
+
+        $users = User::pluck('email'); // Get all user emails
+
+        foreach ($users as $email) {
+            Mail::to($email)->send(new SendUserEmail($request->subject, $request->message));
+        }
+
+        return back()->with('success', 'Emails have been sent successfully.');
     }
 }

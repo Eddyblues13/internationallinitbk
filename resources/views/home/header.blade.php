@@ -59,6 +59,9 @@
     <link rel="stylesheet" href="templates/bank-pro/css/main0338.css" <!-- Refer Live Referrer Registration Resources-->
     <script src="templates/bank-pro/rlforms.referlive.com/scripts/ReferLive_share_v2.js"></script>
     <link rel="stylesheet" href="templates/bank-pro/rlforms.referlive.com/css/ReferLive_banking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 
     <script type="application/ld+json">
@@ -653,6 +656,22 @@
                 </span>
             </button>
             <div class="login-form">
+                <!-- Show Toastr Messages -->
+                <script>
+                    @if(session('success'))
+        toastr.success("{{ session('success') }}");
+    @endif
+
+    @if(session('error'))
+        toastr.error("{{ session('error') }}");
+    @endif
+
+    @if($errors->any())
+        @foreach($errors->all() as $error)
+            toastr.error("{{ $error }}");
+        @endforeach
+    @endif
+                </script>
                 <h3>
                     <img src="templates/bank-pro/images/assets/ico-lock.svg" width="24" height="24" alt="">
                     Log In

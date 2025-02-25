@@ -283,36 +283,34 @@
         window.location.href = "{{ route('admin.user.view', '') }}/" + id;
     }
     </script>
-    <!-- send all users email -->
     <div id="sendmailModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
-
-            <!-- Modal content-->
+            <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header bg-light">
                     <h4 class="modal-title text-dark">This message will be sent to all your users.</h4>
                     <button type="button" class="close text-dark" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body bg-light">
-                    <form method="post" action="">
+                    <form method="POST" action="{{ route('send.email.all') }}">
                         @csrf
-                        <div class=" form-group">
+                        <div class="form-group">
                             <input type="text" name="subject" class="form-control bg-light text-dark"
                                 placeholder="Subject" required>
                         </div>
-                        <div class=" form-group">
-                            <textarea placeholder="Type your message here" class="form-control bg-light text-dark"
-                                name="message" row="8" placeholder="Type your message here" required></textarea>
+                        <div class="form-group">
+                            <textarea class="form-control bg-light text-dark" name="message" rows="5"
+                                placeholder="Type your message here" required></textarea>
                         </div>
-                        <div class=" form-group">
-                            <input type="submit" class="btn btn-light" value="Send">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-light">Send</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- /send all users email Modal -->
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
