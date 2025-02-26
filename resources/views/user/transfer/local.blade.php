@@ -93,12 +93,16 @@
                                         <div class="input-wrapper">
                                             <label class="label">From Account</label>
                                             <select class="form-control custom-select" name="account" required>
-                                                <option value=""></option>
-                                                <option value="savings">Savings (***0260) - {{ Auth::user()->currency }}
-                                                    {{ $savingsBalance }}
+
+                                                <option value="savings" {{ old('account')=='savings' ? 'selected' : ''
+                                                    }}>
+                                                    Savings (***0260) - {{ Auth::user()->currency }} {{
+                                                    number_format($savings_balance, 2) }}
                                                 </option>
-                                                <option value="checking">Checking (***0942) - {{ Auth::user()->currency
-                                                    }} {{ $checkingBalance }}
+                                                <option value="checking" {{ old('account')=='checking' ? 'selected' : ''
+                                                    }}>
+                                                    Checking (***0942) - {{ Auth::user()->currency }} {{
+                                                    number_format($checking_balance, 2) }}
                                                 </option>
                                             </select>
                                         </div>
