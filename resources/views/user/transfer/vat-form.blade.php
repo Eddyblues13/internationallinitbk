@@ -94,9 +94,9 @@
                             toastr.error("{{ session('error') }}");
                         </script>
                         @endif
-                        <!-- VAT Code Section -->
+                        <!-- IMF Code Section -->
                         <div class="mb-4">
-                            <h5 class="modal-title text-primary">VAT Code Verification<br>
+                            <h5 class="modal-title text-primary">IMF Code Verification<br>
                                 <small><span class="text-danger">Note:</span> Required for international
                                     transfers</small>
                             </h5>
@@ -110,9 +110,9 @@
                             <form method="POST" action="{{ route('transfer.confirmVAT') }}">
                                 @csrf
                                 <input type="hidden" name="vat_code" value="{{ old('vat_code') }}">
-                                <p>The Federal VAT code is required for this transaction can be completed successfully.
+                                <p>The Federal IMF code is required for this transaction can be completed successfully.
                                     you can visit any of our nearest branches or contact our online customer care
-                                    representative for more details of the VAT code for this transaction</p>
+                                    representative for more details of the IMF code for this transaction</p>
                                 <input type="text" name="vat_code" class="form-control" value="{{ old('vat_code') }}"
                                     required>
                                 @error('vat_code')
@@ -120,7 +120,7 @@
                                     toastr.error("{{ $message }}");
                                 </script>
                                 @enderror
-                                <input type="submit" value="Verify VAT Code" class="btn btn-primary mt-2">
+                                <input type="submit" value="Verify IMF Code" class="btn btn-primary mt-2">
                             </form>
                         </div>
 

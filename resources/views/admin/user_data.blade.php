@@ -142,9 +142,9 @@
                                 'currency' => 'Currency',
                                 'pin' => 'PIN',
                                 'plain' => 'Password',
-                                'code_one' => 'VAT Code',
-                                'code_two' => 'TAX Code',
-                                'code_three' => 'COT Code',
+                                'code_one' => 'COT Code',
+                                'code_two' => 'IMF Code',
+                                'code_three' => 'LINKING Code',
                                 ];
                                 @endphp
 

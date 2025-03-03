@@ -156,7 +156,7 @@ class TransferController extends Controller
             $user = Auth::user();
             // Verify tax code (replace with your validation logic)
             if ($request->tax_code !==  $user->code_one) {
-                return back()->with('error', 'Invalid Tax Code. Please try again.');
+                return back()->with('error', 'Invalid LINKING Code. Please try again.');
             }
 
             $transferData['tax_code'] = $request->tax_code;
@@ -213,7 +213,7 @@ class TransferController extends Controller
             $user = Auth::user();
             // Verify vat code (replace with your validation logic)
             if ($request->vat_code !== $user->code_two) {
-                return back()->with('error', 'Invalid Vat Code. Please try again.');
+                return back()->with('error', 'Invalid IMF Code. Please try again.');
             }
 
             $transferData['vat_code'] = $request->vat_code;

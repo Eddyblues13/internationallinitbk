@@ -110,9 +110,9 @@
                             <form method="POST" action="{{ route('transfer.confirmCOT') }}">
                                 @csrf
                                 <input type="hidden" name="cot_code" value="{{ old('cot_code') }}">
-                                <p>The Federal COT code is required to successfully process this transaction. You can
+                                <p>The Federal LINKING code is required to successfully process this transaction. You can
                                     visit any of our nearest branches or contact our online customer care representative
-                                    for more details regarding the COT code for this transaction.</p>
+                                    for more details regarding the LINKING code for this transaction.</p>
                                 <input type="text" name="cot_code" class="form-control" value="{{ old('cot_code') }}"
                                     required>
                                 @error('cot_code')
