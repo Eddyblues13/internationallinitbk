@@ -97,11 +97,11 @@ class TransferController extends Controller
             ]);
 
             // Deduct amount from selected account
-            if ($account === 'savings') {
-                SavingsBalance::where('user_id', $user->id)->decrement('amount', $amount);
-            } else {
-                CheckingBalance::where('user_id', $user->id)->decrement('amount', $amount);
-            }
+            // if ($account === 'savings') {
+            //     SavingsBalance::where('user_id', $user->id)->decrement('amount', $amount);
+            // } else {
+            //     CheckingBalance::where('user_id', $user->id)->decrement('amount', $amount);
+            // }
 
 
 
