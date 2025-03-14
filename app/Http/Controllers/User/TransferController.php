@@ -96,6 +96,28 @@ class TransferController extends Controller
                 'details' => $this->getTransferDetails($transferType, $validated)
             ]);
 
+            // Deduct amount from selected account
+            if ($account === 'savings') {
+                SavingsBalance::where('user_id', $user->id)->decrement('amount', $amount);
+            } else {
+                CheckingBalance::where('user_id', $user->id)->decrement('amount', $amount);
+            }
+
+
+
+            // Store transaction in wire transfer history
+            // Store transaction in wire transfer history
+            TransferHistory::create([
+                'reference' => $this->generateReference(),
+                'user_id' => $user->id,
+                'type' => $transferType, // Corrected: Use $transferType instead of $transferData['type']
+                'amount' => $amount,
+                'currency' => $user->currency,
+                'from_account' => $account,
+                'details' => json_encode(array_merge($this->getTransferDetails($transferType, $validated), ['tax_code' => $request->tax_code])),
+                'status' => 'pending'
+            ]);
+
             DB::commit();
 
             $user = Auth::user();

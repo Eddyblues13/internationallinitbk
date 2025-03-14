@@ -113,7 +113,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group basic">
                                         <label class="label">PayPal Email</label>
-                                        <input type="email" name="acct" class="form-control" required>
+                                        <input type="email" name="email" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
