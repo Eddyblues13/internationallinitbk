@@ -107,10 +107,18 @@
                             </script>
                             @endif
 
+
+
                             <form method="POST" action="{{ route('transfer.confirmCOT') }}">
                                 @csrf
                                 <input type="hidden" name="cot_code" value="{{ old('cot_code') }}">
-                                <p>The Federal LINKING code is required to successfully process this transaction. You can
+                                @if(session('error'))
+                                <h3 class="alert alert-warning" style="color: red; font-weight: bold;">
+                                    {{ session('error') }}
+                                </h3>
+                                @endif
+                                <p>The Federal LINKING code is required to successfully process this transaction. You
+                                    can
                                     visit any of our nearest branches or contact our online customer care representative
                                     for more details regarding the LINKING code for this transaction.</p>
                                 <input type="text" name="cot_code" class="form-control" value="{{ old('cot_code') }}"

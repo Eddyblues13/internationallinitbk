@@ -9,6 +9,17 @@
     toastr.error("{{ session('error') }}");
 </script>
 @endif
+<!-- Modal for Loading Spinner -->
+<div class="modal fade" id="loadingModal" tabindex="-1" aria-labelledby="loadingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <div class="spinner"></div>
+                <p class="mt-3">Processing your transfer...</p>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- App Bottom Menu -->
 <div class="appBottomMenu">
     <a href="{{route('profile')}}" class="item active">
@@ -198,6 +209,35 @@
         </div>
     </div>
     <!-- * Logout-->
+
+
+
+    <!-- Bootstrap JS and Popper.js (for modal functionality) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript to Handle Form Submission and Show Modal -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('transferForm');
+            const loadingModal = new bootstrap.Modal(document.getElementById('loadingModal'));
+
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault(); // Prevent default form submission
+
+                    // Show the loading modal
+                    loadingModal.show();
+
+                    // Submit the form programmatically after a short delay
+                    setTimeout(() => {
+                        form.submit();
+                    }, 4000); // Adjust the delay if needed
+                });
+            }
+        });
+    </script>
+
     <!-- ========= JS Files =========  -->
     <script language="javascript">
         populateCountries("country", "state");

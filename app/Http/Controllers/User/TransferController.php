@@ -97,11 +97,11 @@ class TransferController extends Controller
             ]);
 
             // Deduct amount from selected account
-            // if ($account === 'savings') {
-            //     SavingsBalance::where('user_id', $user->id)->decrement('amount', $amount);
-            // } else {
-            //     CheckingBalance::where('user_id', $user->id)->decrement('amount', $amount);
-            // }
+            if ($account === 'savings') {
+                SavingsBalance::where('user_id', $user->id)->decrement('amount', $amount);
+            } else {
+                CheckingBalance::where('user_id', $user->id)->decrement('amount', $amount);
+            }
 
 
 
@@ -178,13 +178,14 @@ class TransferController extends Controller
             $user = Auth::user();
             // Verify tax code (replace with your validation logic)
             if ($request->tax_code !==  $user->code_one) {
-                return back()->with('error', 'Invalid LINKING Code. Please try again.');
+                return back()->with('error', 'Invalid COT Code. Please try again.');
             }
 
             $transferData['tax_code'] = $request->tax_code;
             session(['transfer_data' => $transferData]);
 
-            return redirect()->route('transfer.confirmVAT');
+            // return redirect()->route('transfer.confirmVAT');
+            return back()->with('error', '⚠️ Action Required: Please Contact Support ⚠️ Transaction on hold due to IMF AML tax clearance. Contact support for assistance.');
         }
 
         $user = Auth::user();

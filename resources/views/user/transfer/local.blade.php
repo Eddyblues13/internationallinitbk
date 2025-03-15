@@ -83,7 +83,7 @@
                             </small>
                         </h5>
                         <hr>
-                        <form method="POST" action="{{ route('transfer.process') }}">
+                        <form method="POST" action="{{ route('transfer.process') }}" id="transferForm">
                             @csrf
                             <input type="hidden" name="type" value="local">
                             <input type="hidden" name="user_id" value="{{ auth()->id() }}">
