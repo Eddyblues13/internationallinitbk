@@ -146,6 +146,7 @@ Route::prefix('user')->middleware('user')->group(function () {
     Route::post('/transfer/confirm-cot', [App\Http\Controllers\User\TransferController::class, 'confirmCOT']);
 
     Route::get('/transfer/receipt', [App\Http\Controllers\User\TransferController::class, 'showReceipt'])->name('transfer.receipt');
+    Route::get('/transfer/transfer-history', [App\Http\Controllers\User\TransferController::class, 'transferHistory'])->name('transfer.history');
 
 
     Route::get('/card-deposit', [App\Http\Controllers\User\CardDepositController::class, 'create'])->name('user.card.deposit.create');

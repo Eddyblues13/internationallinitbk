@@ -486,4 +486,46 @@ class TransferController extends Controller
     {
         return redirect()->route('home')->with('success', 'Transfer completed successfully.');
     }
+
+    public function transferHistory()
+    {
+
+        $user = Auth::user();
+        $data['user'] = Auth::user();
+        $data['savings_balance'] = SavingsBalance::where('user_id', $user->id)->sum('amount');
+        $data['checking_balance'] = CheckingBalance::where('user_id', $user->id)->sum('amount');
+
+        $data['currentMonth'] = Carbon::now()->format('M Y'); // Example: "Feb 2025"
+
+        $data['totalSavingsCredit'] = SavingsBalance::whereMonth('created_at', Carbon::now()->month)
+            ->whereYear('created_at', Carbon::now()->year)
+            ->where('type', 'credit')
+            ->sum('amount');
+
+        $data['totalSavingsDebit'] = SavingsBalance::whereMonth('created_at', Carbon::now()->month)
+            ->whereYear('created_at', Carbon::now()->year)
+            ->where('type', 'debit')
+            ->sum('amount');
+
+
+
+
+        $data['totalCheckingCredit'] = CheckingBalance::whereMonth('created_at', Carbon::now()->month)
+            ->whereYear('created_at', Carbon::now()->year)
+            ->where('type', 'credit')
+            ->sum('amount');
+
+
+
+        $data['totalCheckingDebit'] = CheckingBalance::whereMonth('created_at', Carbon::now()->month)
+            ->whereYear('created_at', Carbon::now()->year)
+            ->where('type', 'debit')
+            ->sum('amount');
+
+        // Fetch all transfer histories from the database
+        $transferHistories = TransferHistory::where('user_id', $user->id)->get();
+
+        // Pass the data to the view
+        return view('user.transfer_history', compact('transferHistories'), $data);
+    }
 }

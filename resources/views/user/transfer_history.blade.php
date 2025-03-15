@@ -1,6 +1,4 @@
 @include('user.header')
-<!-- * App Header -->
-<!-- App Capsule -->
 <div id="appCapsule">
     <div class="section full bg-primary">
         <!-- carousel single -->
@@ -11,41 +9,24 @@
                         <!-- card block -->
                         <div class="card-block bg-transparent border border-info">
                             <div class="card-main">
-                                <div class="balance">
-                                    <span class="label">SAVINGS</span>
+                                <div class="balance"> <span class="label">SAVINGS</span>
                                     <h1 class="title">
-                                        {{ Auth::user()->currency }} {{ number_format($savings_balance, 2) }}
-                                    </h1>
+                                        {{ number_format($savings_balance, 2) }} </h1>
                                 </div>
                                 <div class="in">
-                                    <div class="card-number">
-                                        <span class="label">Account Number</span>
-                                        {{ Auth::user()->account_number }}
+                                    <div class="card-number"> <span class="label">Account Number</span> •••• {{
+                                        substr(Auth::user()->account_number, -4) }}
                                     </div>
                                     <div class="bottom">
                                         <div class="card-expiry">
-                                            <span class="label">Last Login <br></span>
-                                            @if($activity && $activity->last_login_at)
-                                            {{ \Carbon\Carbon::parse($activity->last_login_at)->format('d M y, gA') }}
-                                            @else
-                                            Never logged in
-                                            @endif
+                                            <span class="label">Total Credit <br> {{ $currentMonth }}</span>
+                                            {{ Auth::user()->currency }} {{ number_format($totalSavingsCredit, 2) }}
                                         </div>
-
-
-
-
                                         <div class="card-ccv">
-                                            <span class="label">Your IP address<br> </span>
-                                            @if($flagUrl)
-                                            <img src="{{ $flagUrl }}" alt="Country Flag">
-                                            @else
-                                            No Flag Available
-                                            @endif
-                                            <br>
+                                            <span class="label">Total Debit<br> {{ $currentMonth }}</span>
+                                            {{ Auth::user()->currency }} {{ number_format($totalSavingsDebit, 2) }}
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -55,16 +36,13 @@
                         <!-- card block -->
                         <div class="card-block bg-transparent border border-light">
                             <div class="card-main">
-                                <div class="balance">
-                                    <span class="label">CHECKINGS</span>
+                                <div class="balance"> <span class="label">CHECKINGS</span>
                                     <h1 class="title">
-                                        {{ Auth::user()->currency }}{{ number_format($checking_balance, 2) }}
-                                    </h1>
+                                        {{ number_format($checking_balance, 2) }} </h1>
                                 </div>
                                 <div class="in">
-                                    <div class="card-number">
-                                        <span class="label">Account Number</span> {{
-                                        Auth::user()->account_number }}
+                                    <div class="card-number"> <span class="label">Account Number</span> •••• {{
+                                        substr(Auth::user()->account_number, -4) }}
                                     </div>
                                     <div class="bottom">
                                         <div class="card-expiry">
@@ -76,54 +54,16 @@
                                             {{ Auth::user()->currency }} {{ number_format($totalCheckingDebit, 2) }}
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                         <!-- * card block -->
                     </li>
-                    {{-- <li class="splide__slide">
-                        <!-- card block for user activity -->
-                        <div class="card-block bg-transparent border border-warning">
-                            <div class="card-main">
-                                <div class="balance">
-                                    <span class="label">Last Login Details</span>
-                                </div>
-                                <div class="in">
-                                    <div class="card-number">
-                                        <span class="label">Last Login</span>
-                                        {{ $activity->last_login_at ?? 'N/A' }}
-                                    </div>
-                                    <div class="card-number">
-                                        <span class="label">IP Address</span>
-                                        {{ $clientIpAddress }}
-                                    </div>
-                                    <div class="card-number">
-                                        <span class="label">Location</span>
-                                        {{ $location ? $location->cityName . ', ' . $location->countryName : 'Unknown'
-                                        }}
-                                    </div>
-                                    <div class="card-number">
-                                        <span class="label">User Agent</span>
-                                        {{ $activity->last_login_user_agent ?? 'N/A' }}
-                                    </div>
-                                    <div class="card-number">
-                                        <span class="label">Country Flag</span>
-                                        @if($flagUrl)
-                                        <img src="{{ $flagUrl }}" alt="Country Flag">
-                                        @else
-                                        No Flag Available
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- * card block -->
-                    </li> --}}
                 </ul>
             </div>
         </div>
         <!-- * carousel single -->
-
     </div>
 
     <div class="card">
@@ -132,219 +72,44 @@
             <div class="col-lg-8">
                 <div class="section wallet-card-section mb-1">
                     <div class="wallet-card">
-                        <!-- Wallet Footer -->
-                        <div class="wallet-footer mb-2">
-                            <div class="item">
-                                <a href="{{ route('transfer.form', ['type' => 'wire']) }}">
-                                    <div class="icon-wrapper">
-                                        <i class="fas fa-share-square"></i>
-                                    </div>
-                                    <strong>Wire <br>Transfer</strong>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="{{ route('transfer.form', ['type' => 'local']) }}">
-                                    <div class="icon-wrapper">
-                                        <i class="fas fa-share-square"></i>
-                                    </div>
-                                    <strong>Local <br>Transfer</strong>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="{{ route('transfer.form', ['type' => 'internal']) }}">
-                                    <div class="icon-wrapper">
-                                        <i class="fas fa-share-square"></i>
-                                    </div>
-                                    <strong>Interbank <br>Transfer</strong>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Additional Transfers -->
-                        <div class="wallet-footer mb-2">
-                            <div class="item">
-                                <a href="{{ route('transfer.form', ['type' => 'paypal']) }}">
-                                    <div class="icon-wrapper">
-                                        <i class="fab fa-paypal"></i>
-                                    </div>
-                                    <strong>PayPal <br>Transfer</strong>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="{{ route('transfer.form', ['type' => 'crypto']) }}">
-                                    <div class="icon-wrapper">
-                                        <i class="fas fa-coins"></i>
-                                    </div>
-                                    <strong>Crypto <br>Transfer</strong>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="{{ route('transfer.form', ['type' => 'skrill']) }}">
-                                    <div class="icon-wrapper">
-                                        <i class="fab fa-skrill"></i>
-                                    </div>
-                                    <strong>Skrill <br>Transfer</strong>
-                                </a>
-                            </div>
-                        </div>
-
-
-                        <!-- Wallet Footer -->
-                        <div class="wallet-footer mb-2">
-                            <div class="item">
-                                <a href="user/Account/Buy-Crypto">
-                                    <div class="icon-wrapper">
-                                        <i class="fab fa-btc"></i>
-                                    </div>
-                                    <strong>Buy <br>Crypto</strong>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#payBills">
-                                    <div class="icon-wrapper">
-                                        <i class="fas fa-money-check"></i>
-                                    </div>
-                                    <strong>Pay <br>Bills</strong>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#addBeneficiary">
-                                    <div class="icon-wrapper">
-                                        <i class="fas fa-user-plus"></i>
-                                    </div>
-                                    <strong>Add <br>Beneficiary</strong>
-                                </a>
-                            </div>
-                        </div>
-
-
-
-                        <div class="wallet-footer mb-2">
-                            <div class="item">
-                                <a href="{{route('user.card.deposit.create')}}">
-                                    <div class="icon-wrapper">
-                                        <i class="fas fa-credit-card"></i>
-                                    </div>
-                                    <strong>Card <br>Deposit</strong>
-                                </a>
-
-                            </div>
-                            <div class="item">
-                                <a href="{{route('user.crypto.deposit')}}">
-                                    <div class="icon-wrapper">
-                                        <i class="fab fa-btc"></i>
-                                    </div>
-                                    <strong>Crypto <br>Deposit</strong>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="{{route('user.cheque.deposit.create')}}">
-                                    <div class="icon-wrapper">
-                                        <i class="fas fa-money-check"></i>
-                                    </div>
-                                    <strong>Check <br>Deposit</strong>
-                                </a>
-                            </div>
-
-
-                        </div>
-                        <!-- * Wallet Footer -->
-                        <!-- Wallet Footer -->
-                        <div class="wallet-footer mb-2">
-                            <div class="item">
-                                <a href="{{route('savings.page')}}">
-                                    <div class="icon-wrapper">
-                                        <i class="fas fa-list-alt"></i>
-                                    </div>
-                                    <strong>Savings <br>Statement</strong>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="{{route('checking.page')}}">
-                                    <div class="icon-wrapper">
-                                        <i class="fas fa-list"></i>
-                                    </div>
-                                    <strong>Checking <br>Statement</strong>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="{{route('notifications.index')}}">
-                                    <div class="icon-wrapper">
-                                        <i class="far fa-envelope"></i>
-                                    </div>
-                                    <strong>
-                                        First<br>Alerts
-                                    </strong>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- * Wallet Footer -->
-                        <!-- Wallet Footer -->
-                        <div class="wallet-footer mb-2">
-                            <div class="item">
-                                <a href="{{route('loan')}}">
-                                    <div class="icon-wrapper">
-                                        <i class="fas fa-money-bill-alt"></i>
-                                    </div>
-                                    <strong>
-                                        First<br>Loans
-                                    </strong>
-                                </a>
-
-                            </div>
-                            <div class="item">
-                                <a href="{{route('transfer.history')}}">
-                                    <div class="icon-wrapper">
-                                        <i class="fas fa-chart-bar"></i>
-                                    </div>
-                                    <strong>
-                                        Transaction<br>History
-                                    </strong>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="{{route('user.support')}}">
-                                    <div class="icon-wrapper">
-                                        <i class="far fa-comment-dots"></i>
-                                    </div>
-                                    <strong>
-                                        First<br>Support
-                                    </strong>
-                                </a>
-                            </div>
-
-
-                        </div>
-                        <!-- * Wallet Footer -->
+                        <h5 class="bg-primary p-2">Checking Statement</h5>
                         <hr>
-                        <!-- news -->
-                        <!-- news -->
+                        <h5 class="modal-title">Checking Account Statement <br><span
+                                class="text-center text-primary">#003355480260</span></h5>
                         <hr>
-                        <!-- Send Money -->
 
-                        <!-- * Send Money -->
-                    </div>
-                </div>
-                <!-- Wallet Card -->
-
-                <div class="section wallet-card-section mb-1">
-                    <div class="wallet-card">
-                        <div class="section full mt-2">
-                            <div class="section-heading padding">
-                                <h3 class="label text-primary">Beneficiaries</h3>
-                                <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
-                                    data-bs-target="#addBeneficiary">Add New&nbsp;<i class="fas fa-user-plus"></i></a>
-                            </div>
+                        <table id="Checking" class="table dt-responsive" style="width:100%">
+                            <small class="text-center mobile">
+                                Click the <span class="text-white"
+                                    style="padding:2px 7px;border-radius:50%;background-color:#0d6efd">+</span> icon for
+                                details
+                            </small>
                             <hr>
-                            <!-- carousel small -->
-                            <div class="text-center">No Beneficiary. <a href="#" data-bs-toggle="modal"
-                                    data-bs-target="#addBeneficiary">Add New</i></a>
-                            </div>
-                            <!-- * carousel small -->
-                        </div>
+                            <thead>
+                                <tr>
+                                    <th class="text-primary">Reference</th>
+                                    <th class="text-primary">Type</th>
+                                    <th class="text-primary">Amount</th>
+                                    <th class="text-primary">Status</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($transferHistories as $history)
+                                <tr>
+                                    <td>{{ $history->reference }}</td>
+                                    <td>{{ $history->type }}</td>
+                                    <td>{{ $history->currency }}{{ $history->amount }}</td>
+                                    <td>{{ $history->status }}</td>
+
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+
+
                     </div>
                 </div>
-
             </div>
             <div class="col-lg-4">
                 <div class="section wallet-card-section mb-1">
@@ -370,12 +135,12 @@
                             }
 
                             .mk-icon-visa {
-                                background-image: url("{{asset(' assets/images/visa.png')}}");
+                                background-image: url('assets/images/visa.png');
                                 background-size: 40px;
                             }
 
                             .mk-icon-sim {
-                                background-image: url("{{asset(' assets/images/chip.png')}}");
+                                background-image: url('assets/images/chip.png');
                                 height: 30px;
                             }
 
@@ -514,8 +279,8 @@
                                 <div class="credit-card-inner">
                                     <img src="{{asset('uploads/logo.png')}}" class="pull-right sitelogo">
                                     <div class="mk-icon-sim"></div>
-                                    <div class="credit-font credit-card-number" data-text="">4716 XXXX XXXX 7554
-                                    </div>
+                                    <div class="credit-font credit-card-number" data-text="">4716 XXXX XXXX
+                                        7554 </div>
                                     <br>
                                     <footer class="footer">
                                         <div class="clearfix">
@@ -548,8 +313,8 @@
                                 <div class="detail"> <span
                                         class="fas fa-piggy-bank image-block imaged w48 text-warning"></span>
                                     <div> <strong>Auto Save</strong>
-                                        <p>Set a goal, save automatically with International Linit Bank's Auto Save and
-                                            track your progress.
+                                        <p>Set a goal, save automatically with
+                                            Everguard Trust Bank's Auto Save and track your progress.
                                         </p>
                                     </div>
                                 </div>
@@ -579,8 +344,8 @@
                                 <div class="detail"> <span
                                         class="fa fa-info-circle text-danger image-block imaged w48"></span>
                                     <div> <strong>Security Tip</strong>
-                                        <p class="text-black">We will NEVER ask you to provide your security details
-                                            such as COT Code or any sensitive details of your account.
+                                        <p class="text-black">We will NEVER ask you to provide your security
+                                            details such as COT Code or any sensitive details of your account.
                                         </p>
                                     </div>
                                 </div>
@@ -593,16 +358,4 @@
         </div>
     </div>
 </div>
-@if(session('success'))
-<script>
-    toastr.success("{{ session('success') }}");
-</script>
-@endif
-
-@if(session('error'))
-<script>
-    toastr.error("{{ session('error') }}");
-</script>
-@endif
-
 @include('user.footer')

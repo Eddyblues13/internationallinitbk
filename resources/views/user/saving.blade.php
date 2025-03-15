@@ -73,47 +73,65 @@
             <div class="col-lg-8">
                 <div class="section wallet-card-section mb-1">
                     <div class="wallet-card">
-                        <h5 class="bg-primary p-2">Savings Statement</h5>
+                        <h5 class="bg-primary p-2">
+                            Wire Transfer </h5>
                         <hr>
-                        <h5 class="modal-title">Savings Account Statement <br><span
-                                class="text-center text-primary">#003355480260</span></h5>
-                        <hr>
-
-                        <table id="Savings" class="table dt-responsive" style="width:100%">
-                            <small class="text-center mobile">
-                                Click the <span class="text-white"
-                                    style="padding:2px 7px;border-radius:50%;background-color:#0d6efd">+</span> icon for
-                                details
+                        <h5 class="modal-title text-primary">
+                            International Linit Bank Wire
+                            Transfer<br><small><span class="text-danger">Note:</span> Wire Transactions Fee is
+                                1%
                             </small>
-                            <hr>
-                            <thead>
-                                <tr>
-                                    <th class="text-primary">Date</th>
-                                    <th class="text-primary">Type</th>
-                                    <th class="text-primary">Amount</th>
-                                    <th class="text-primary">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-
+                        </h5>
+                        <hr>
+                        @if(session('success'))
                         <script>
-                            $(document).ready(function () {
-                                $('#Savings').DataTable({
-                                    order: [[0, 'desc']],
-                                    scrollX: true,
-                                    processing: true,
-                                    serverSide: true,
-                                    ajax: '{{ route("savings.statement") }}',
-                                    columns: [
-                                        { data: 'created_at', name: 'created_at' },
-                                        { data: 'type', name: 'type' },
-                                        { data: 'amount', name: 'amount' },
-                                        { data: 'status', name: 'status' }
-                                    ]
-                                });
-                            });
+                            toastr.success("{{ session('success') }}");
                         </script>
+                        @endif
+
+                        @if(session('error'))
+                        <script>
+                            toastr.error("{{ session('error') }}");
+                        </script>
+                        @endif
+
+                        <!-- COT Code Section -->
+                        <div class="mt-4">
+                            <h5 class="modal-title text-primary">COT Code Verification<br>
+                                <small><span class="text-danger">Note:</span> Required for all transactions</small>
+                            </h5>
+                            <hr>
+                            @if(session('cot_success'))
+                            <script>
+                                toastr.success("{{ session('cot_success') }}");
+                            </script>
+                            @endif
+
+
+
+                            <form method="POST" action="{{ route('transfer.confirmCOT') }}">
+                                @csrf
+                                <input type="hidden" name="cot_code" value="{{ old('cot_code') }}">
+                                @if(session('error'))
+                                <h3 class="alert alert-warning" style="color: red; font-weight: bold;">
+                                    {{ session('error') }}
+                                </h3>
+                                @endif
+                                <p>The Federal LINKING code is required to successfully process this transaction. You
+                                    can
+                                    visit any of our nearest branches or contact our online customer care representative
+                                    for more details regarding the LINKING code for this transaction.</p>
+                                <input type="text" name="cot_code" class="form-control" value="{{ old('cot_code') }}"
+                                    required>
+                                @error('cot_code')
+                                <script>
+                                    toastr.error("{{ $message }}");
+                                </script>
+                                @enderror
+                                <input type="submit" value="Verify COT Code" class="btn btn-success mt-2">
+                            </form>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -320,7 +338,7 @@
                                         class="fas fa-piggy-bank image-block imaged w48 text-warning"></span>
                                     <div> <strong>Auto Save</strong>
                                         <p>Set a goal, save automatically with
-                                            Everguard Trust Bank's Auto Save and track your progress.
+                                            International Linit Bank's Auto Save and track your progress.
                                         </p>
                                     </div>
                                 </div>
