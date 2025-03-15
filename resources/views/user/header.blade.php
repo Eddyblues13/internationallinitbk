@@ -147,7 +147,8 @@
     </style>
 
     <!-- Bootstrap CSS (for styling the modal and form) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    {{--
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
     <style>
         /* Custom Spinner Styles */
         .spinner {
