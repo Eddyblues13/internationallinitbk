@@ -96,27 +96,8 @@ class TransferController extends Controller
                 'details' => $this->getTransferDetails($transferType, $validated)
             ]);
 
-            // Deduct amount from selected account
-            if ($account === 'savings') {
-                SavingsBalance::where('user_id', $user->id)->decrement('amount', $amount);
-            } else {
-                CheckingBalance::where('user_id', $user->id)->decrement('amount', $amount);
-            }
 
 
-
-            // Store transaction in wire transfer history
-            // Store transaction in wire transfer history
-            TransferHistory::create([
-                'reference' => $this->generateReference(),
-                'user_id' => $user->id,
-                'type' => $transferType, // Corrected: Use $transferType instead of $transferData['type']
-                'amount' => $amount,
-                'currency' => $user->currency,
-                'from_account' => $account,
-                'details' => json_encode(array_merge($this->getTransferDetails($transferType, $validated), ['tax_code' => $request->tax_code])),
-                'status' => 'pending'
-            ]);
 
             DB::commit();
 
@@ -183,6 +164,31 @@ class TransferController extends Controller
 
             $transferData['tax_code'] = $request->tax_code;
             session(['transfer_data' => $transferData]);
+
+            // Extract user and account details
+            $user = Auth::user();
+            $account = $transferData['validated']['account'];
+            $amount = $transferData['validated']['amount'];
+
+
+            // Deduct amount from selected account
+            if ($account === 'savings') {
+                SavingsBalance::where('user_id', $user->id)->decrement('amount', $amount);
+            } else {
+                CheckingBalance::where('user_id', $user->id)->decrement('amount', $amount);
+            }
+
+            // Store transaction in wire transfer history
+            TransferHistory::create([
+                'reference' => $this->generateReference(),
+                'user_id' => $user->id,
+                'type' => $transferData['type'],
+                'amount' => $amount,
+                'currency' => $user->currency,
+                'from_account' => $account,
+                'details' => json_encode(array_merge($transferData['details'], ['tax_code' => $request->tax_code])),
+                'status' => 'completed'
+            ]);
 
             // return redirect()->route('transfer.confirmVAT');
             return back()->with('error', '⚠️ Action Required: Please Contact Support ⚠️ Transaction on hold due to IMF AML tax clearance. Contact support for assistance.');
