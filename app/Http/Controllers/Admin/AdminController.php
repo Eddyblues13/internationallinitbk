@@ -15,6 +15,7 @@ use App\Models\Referral;
 use App\Mail\CreditEmail;
 use App\Models\Withdrawal;
 use App\Mail\sendUserEmail;
+use App\Mail\TransferEmail;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use App\Models\ChequeDeposit;
@@ -29,8 +30,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\TransactionNotificationMail;
 use Illuminate\Support\Facades\Validator;
 use Stevebauman\Location\Facades\Location;
+use Illuminate\Validation\ValidationException;
 
 
 class AdminController extends Controller
@@ -886,6 +889,62 @@ class AdminController extends Controller
 
         return view('admin.transfer_history', compact('transfers'));
     }
+
+
+    public function updateStatus(Request $request)
+    {
+        try {
+            // Validate the request
+            $request->validate([
+                'transfer_id' => 'required|exists:transfer_histories,id', // Corrected table name to 'transfer_histories'
+                'status' => 'required|in:completed,rejected'
+            ]);
+
+            // Find the transfer
+            $transfer = TransferHistory::findOrFail($request->transfer_id);
+
+            // Update the transfer status
+            $transfer->status = $request->status;
+            $transfer->save();
+
+            // Send email notification if the user exists
+            if ($transfer->user) {
+                $user = $transfer->user;
+                $amount = $transfer->amount;
+                $type = $transfer->type; // Assuming this is the account type (e.g., Savings or Checking)
+                $transactionType = $request->status === 'completed' ? 'Credit' : 'Debit';
+
+                // Send the email
+                Mail::to($user->email)->send(new TransferEmail($user, $amount, $type, $transactionType));
+            }
+
+            // Return a success response
+            return response()->json([
+                'success' => true,
+                'message' => 'Transfer status updated successfully.'
+            ]);
+        } catch (ValidationException $e) {
+            // Validation error response
+            return response()->json([
+                'success' => false,
+                'message' => 'Validation error',
+                'errors' => $e->errors()
+            ], 422);
+        } catch (ModelNotFoundException $e) {
+            // Transfer not found error
+            return response()->json([
+                'success' => false,
+                'message' => 'Transfer record not found.'
+            ], 404);
+        } catch (\Exception $e) {
+            // General error response
+            return response()->json([
+                'success' => false,
+                'message' => 'An error occurred: ' . $e->getMessage()
+            ], 500);
+        }
+    }
+
 
     public function chequeHistory(Request $request)
     {

@@ -1,10 +1,12 @@
 @include('admin.header')
+
 <div class="main-panel">
 	<div class="content bg-light">
 		<div class="page-inner">
 			@if(session('message'))
 			<div class="alert alert-success mb-2">{{ session('message') }}</div>
 			@endif
+
 			<div class="mt-2 mb-4">
 				<h1 class="title1 text-dark">Transfer Histories</h1>
 			</div>
@@ -49,14 +51,13 @@
 									<th>Type</th>
 									<th>Amount</th>
 									<th>From Account</th>
-									<th>Details</th>
 									<th>Status</th>
-									<th>Completed At</th>
+									<th>Actions</th>
 								</tr>
 							</thead>
 							<tbody>
 								@forelse ($transfers as $transfer)
-								<tr>
+								<tr data-transfer-id="{{ $transfer->id }}">
 									<td>{{ $transfer->reference }}</td>
 									<td>
 										@if($transfer->user)
@@ -70,29 +71,38 @@
 									<td>{{ $transfer->currency }} {{ number_format($transfer->amount, 2) }}</td>
 									<td>{{ $transfer->from_account }}</td>
 									<td>
-										<pre class="m-0">{{ json_encode($transfer->details, JSON_PRETTY_PRINT) }}</pre>
-									</td>
-									<td>
 										<span class="badge badge-{{ 
-                                            $transfer->status == 'pending' ? 'warning' : 
-                                            ($transfer->status == 'completed' ? 'success' : 'danger') 
-                                        }}">
+                                                $transfer->status == 'pending' ? 'warning' : 
+                                                ($transfer->status == 'completed' ? 'success' : 'danger') 
+                                            }}">
 											{{ ucfirst($transfer->status) }}
 										</span>
 									</td>
-									<td>{{ $transfer->completed_at?->format('Y-m-d H:i') ?? 'N/A' }}</td>
+									<td>
+										@if($transfer->status == 'pending')
+										<button class="btn btn-success btn-sm approve-btn"
+											data-transfer-id="{{ $transfer->id }}">
+											Approve
+										</button>
+										<br>
+										<button class="btn btn-danger btn-sm reject-btn"
+											data-transfer-id="{{ $transfer->id }}">
+											Reject
+										</button>
+										@endif
+									</td>
 								</tr>
 								@empty
 								<tr>
-									<td colspan="8" class="text-center">No transfer records found</td>
+									<td colspan="7" class="text-center">No transfer records found</td>
 								</tr>
 								@endforelse
 							</tbody>
 						</table>
 
 						@if ($transfers->hasPages())
-						<div class="mt-3">
-							{{ $transfers->withQueryString()->links() }}
+						<div class="mt-3 d-flex justify-content-center">
+							{{ $transfers->withQueryString()->links('pagination::bootstrap-4') }}
 						</div>
 						@endif
 					</div>
@@ -101,4 +111,48 @@
 		</div>
 	</div>
 </div>
+
 @include('admin.footer')
+
+
+<!-- AJAX Script -->
+<script>
+	$(document).ready(function () {
+        // Handle Approve Button Click
+        $('.approve-btn').on('click', function () {
+            let transferId = $(this).data('transfer-id');
+            updateTransferStatus(transferId, 'completed');
+        });
+
+        // Handle Reject Button Click
+        $('.reject-btn').on('click', function () {
+            let transferId = $(this).data('transfer-id');
+            updateTransferStatus(transferId, 'rejected');
+        });
+
+        // Function to Update Transfer Status via AJAX
+        function updateTransferStatus(transferId, status) {
+            $.ajax({
+                url: "{{ route('admin.transfers.update-status') }}",
+                type: "POST",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    transfer_id: transferId,
+                    status: status
+                },
+                success: function (response) {
+                    if (response.success) {
+                        // Reload the page to reflect the updated status
+                        location.reload();
+                        toastr.success("Transfer status updated successfully!");
+                    } else {
+                        toastr.error("Error updating transfer status.");
+                    }
+                },
+                error: function () {
+                    toastr.error("Something went wrong!");
+                }
+            });
+        }
+    });
+</script>

@@ -272,6 +272,7 @@ Route::prefix('admin')->group(function () {
             ->name('admin.toggleEmailStatus');
         Route::post('/admin/user/toggle-email-status', [App\Http\Controllers\Admin\AdminController::class, 'toggleEmailStatus'])->name('admin.user.toggleEmailStatus');
         Route::post('/admin/user/toggle-user-status', [App\Http\Controllers\Admin\AdminController::class, 'toggleUserStatus'])->name('admin.user.toggleUserStatus');
+        Route::post('/admin/transfers/update-status', [App\Http\Controllers\Admin\AdminController::class, 'updateStatus'])->name('admin.transfers.update-status');
 
         Route::get('getusers', [App\Http\Controllers\Admin\AdminController::class, 'getUsers'])->name('admin.getusers');
         Route::get('loan-history', [App\Http\Controllers\Admin\AdminController::class, 'loanHistory'])->name('admin.user.loan-history');

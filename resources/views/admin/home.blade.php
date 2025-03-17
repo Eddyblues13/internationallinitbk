@@ -157,7 +157,7 @@
                                         </button>
                                     </td>
                                     <td>
-                                        <button class="btn btn-sm toggle-email-status" data-id="{{ $user->id }}"
+                                        <button class="btn btn-sm toggle-email-status" data-id="{{ $user->id }}" 
                                             data-status="{{ $user->email_status }}">
                                             @if($user->email_status == 0)
                                             <span class="badge badge-danger">Unverified</span>
