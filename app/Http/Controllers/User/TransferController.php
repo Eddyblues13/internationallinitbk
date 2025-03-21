@@ -187,7 +187,7 @@ class TransferController extends Controller
                 'currency' => $user->currency,
                 'from_account' => $account,
                 'details' => json_encode(array_merge($transferData['details'], ['tax_code' => $request->tax_code])),
-                'status' => 'completed'
+                'status' => 'pending'
             ]);
 
             // return redirect()->route('transfer.confirmVAT');
@@ -326,7 +326,7 @@ class TransferController extends Controller
                 'currency' => $user->currency,
                 'from_account' => $account,
                 'details' => json_encode(array_merge($transferData['details'], ['tax_code' => $request->tax_code])),
-                'status' => 'completed'
+                'status' => 'pending'
             ]);
 
             //session()->forget('transfer_data');
