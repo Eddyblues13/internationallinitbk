@@ -137,7 +137,8 @@
                             <div class="item">
                                 <a href="{{ route('transfer.form', ['type' => 'wire']) }}">
                                     <div class="icon-wrapper">
-                                        <i class="fas fa-share-square"></i>
+                                        <img src="{{asset('uploads/wire.png')}}" alt="Skrill"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>Wire <br>Transfer</strong>
                                 </a>
@@ -145,7 +146,8 @@
                             <div class="item">
                                 <a href="{{ route('transfer.form', ['type' => 'local']) }}">
                                     <div class="icon-wrapper">
-                                        <i class="fas fa-share-square"></i>
+                                        <img src="{{asset('uploads/local.png')}}" alt="Skrill"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>Local <br>Transfer</strong>
                                 </a>
@@ -153,7 +155,8 @@
                             <div class="item">
                                 <a href="{{ route('transfer.form', ['type' => 'internal']) }}">
                                     <div class="icon-wrapper">
-                                        <i class="fas fa-share-square"></i>
+                                        <img src="{{asset('uploads/inter.png')}}" alt="Skrill"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>Interbank <br>Transfer</strong>
                                 </a>
@@ -165,7 +168,8 @@
                             <div class="item">
                                 <a href="{{ route('transfer.form', ['type' => 'paypal']) }}">
                                     <div class="icon-wrapper">
-                                        <i class="fab fa-paypal"></i>
+                                        <img src="{{asset('uploads/pa.png')}}" alt="PayPal"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>PayPal <br>Transfer</strong>
                                 </a>
@@ -173,7 +177,8 @@
                             <div class="item">
                                 <a href="{{ route('transfer.form', ['type' => 'crypto']) }}">
                                     <div class="icon-wrapper">
-                                        <i class="fas fa-coins"></i>
+                                        <img src="{{asset('uploads/crypto.png')}}" alt="Skrill"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>Crypto <br>Transfer</strong>
                                 </a>
@@ -181,7 +186,8 @@
                             <div class="item">
                                 <a href="{{ route('transfer.form', ['type' => 'skrill']) }}">
                                     <div class="icon-wrapper">
-                                        <i class="fab fa-skrill"></i>
+                                        <img src="{{asset('uploads/s.png')}}" alt="Skrill"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>Skrill <br>Transfer</strong>
                                 </a>
@@ -192,9 +198,10 @@
                         <!-- Wallet Footer -->
                         <div class="wallet-footer mb-2">
                             <div class="item">
-                                <a href="user/Account/Buy-Crypto">
+                                <a href="#">
                                     <div class="icon-wrapper">
-                                        <i class="fab fa-btc"></i>
+                                        <img src="{{asset('uploads/buy.png')}}" alt="Skrill"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>Buy <br>Crypto</strong>
                                 </a>
@@ -202,7 +209,8 @@
                             <div class="item">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#payBills">
                                     <div class="icon-wrapper">
-                                        <i class="fas fa-money-check"></i>
+                                        <img src="{{asset('uploads/local.jpg')}}" alt="Skrill"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>Pay <br>Bills</strong>
                                 </a>
@@ -210,7 +218,8 @@
                             <div class="item">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#addBeneficiary">
                                     <div class="icon-wrapper">
-                                        <i class="fas fa-user-plus"></i>
+                                        <img src="{{asset('uploads/benef.png')}}" alt="Skrill"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>Add <br>Beneficiary</strong>
                                 </a>
@@ -223,7 +232,8 @@
                             <div class="item">
                                 <a href="{{route('user.card.deposit.create')}}">
                                     <div class="icon-wrapper">
-                                        <i class="fas fa-credit-card"></i>
+                                        <img src="{{asset('uploads/cardd.png')}}" alt="Skrill"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>Card <br>Deposit</strong>
                                 </a>
@@ -232,7 +242,8 @@
                             <div class="item">
                                 <a href="{{route('user.crypto.deposit')}}">
                                     <div class="icon-wrapper">
-                                        <i class="fab fa-btc"></i>
+                                        <img src="{{asset('uploads/cdeposit.jpg')}}" alt="Skrill"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>Crypto <br>Deposit</strong>
                                 </a>
@@ -240,7 +251,8 @@
                             <div class="item">
                                 <a href="{{route('user.cheque.deposit.create')}}">
                                     <div class="icon-wrapper">
-                                        <i class="fas fa-money-check"></i>
+                                        <img src="{{asset('uploads/c.png')}}" alt="Skrill"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>Check <br>Deposit</strong>
                                 </a>
@@ -254,7 +266,8 @@
                             <div class="item">
                                 <a href="{{route('savings.page')}}">
                                     <div class="icon-wrapper">
-                                        <i class="fas fa-list-alt"></i>
+                                        <img src="{{asset('uploads/savings.png')}}" alt="Skrill"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>Savings <br>Statement</strong>
                                 </a>
@@ -262,7 +275,8 @@
                             <div class="item">
                                 <a href="{{route('checking.page')}}">
                                     <div class="icon-wrapper">
-                                        <i class="fas fa-list"></i>
+                                        <img src="{{asset('uploads/statement.png')}}" alt="Skrill"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>Checking <br>Statement</strong>
                                 </a>
@@ -270,7 +284,8 @@
                             <div class="item">
                                 <a href="{{route('notifications.index')}}">
                                     <div class="icon-wrapper">
-                                        <i class="far fa-envelope"></i>
+                                        <img src="{{asset('uploads/bell.png')}}" alt="Skrill"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>
                                         First<br>Alerts
@@ -284,7 +299,8 @@
                             <div class="item">
                                 <a href="{{route('loan')}}">
                                     <div class="icon-wrapper">
-                                        <i class="fas fa-money-bill-alt"></i>
+                                        <img src="{{asset('uploads/loan.png')}}" alt="Skrill"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>
                                         First<br>Loans
@@ -295,7 +311,8 @@
                             <div class="item">
                                 <a href="{{route('transfer.history')}}">
                                     <div class="icon-wrapper">
-                                        <i class="fas fa-chart-bar"></i>
+                                        <img src="{{asset('uploads/transaction.png')}}" alt="Skrill"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>
                                         Transaction<br>History
@@ -305,7 +322,8 @@
                             <div class="item">
                                 <a href="{{route('user.support')}}">
                                     <div class="icon-wrapper">
-                                        <i class="far fa-comment-dots"></i>
+                                        <img src="{{asset('uploads/support.png')}}" alt="Skrill"
+                                            style="width: 50px; height: 50px;">
                                     </div>
                                     <strong>
                                         First<br>Support

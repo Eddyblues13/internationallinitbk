@@ -5238,7 +5238,7 @@ textarea,
 }
 
 .wallet-card .wallet-footer .item .icon-wrapper {
-    background: var(--primary_color);
+    background: white;
     width: 48px;
     height: 48px;
     display: inline-flex;
