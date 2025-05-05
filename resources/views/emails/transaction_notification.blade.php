@@ -1,247 +1,165 @@
-<!DOCTYPE html
-    PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
-<html xmlns:v='urn:schemas-microsoft-com:vml'>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0; maximum-scale=1.0;' />
-    <!--[if !mso]-->
-    <!-- -->
-    <link href='https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet'>
-    <!--<![endif]-->
-
-    <title>International Linit Bank</title>
-
-    <style type='text/css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Notification - International Linit Bank</title>
+    <style>
         body {
-            width: 100%;
-            background-color: #ffffff;
-            margin: 0;
-            padding: 0;
-            -webkit-font-smoothing: antialiased;
-            mso-margin-top-alt: 0px;
-            mso-margin-bottom-alt: 0px;
-            mso-padding-alt: 0px 0px 0px 0px;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        p,
-        h1,
-        h2,
-        h3,
-        h4 {
-            margin-top: 0;
-            margin-bottom: 0;
-            padding-top: 0;
-            padding-bottom: 0;
+        .header {
+            background-color: #1a365d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
         }
 
-        span.preheader {
-            display: none;
-            font-size: 1px;
-        }
-
-        html {
-            width: 100%;
-        }
-
-        table {
+        .bank-description {
             font-size: 14px;
-            border: 0;
+            margin-top: 5px;
+            opacity: 0.9;
         }
 
-        /* ----------- responsivity ----------- */
-
-        @media only screen and (max-width: 640px) {
-            .main-header {
-                font-size: 20px !important;
-            }
-
-            .main-section-header {
-                font-size: 28px !important;
-            }
-
-            .show {
-                display: block !important;
-            }
-
-            .hide {
-                display: none !important;
-            }
-
-            .align-center {
-                text-align: center !important;
-            }
-
-            .no-bg {
-                background: none !important;
-            }
-
-            .main-image img {
-                width: 440px !important;
-                height: auto !important;
-            }
-
-            .divider img {
-                width: 440px !important;
-            }
-
-            .container590 {
-                width: 440px !important;
-            }
-
-            .container580 {
-                width: 400px !important;
-            }
-
-            .main-button {
-                width: 220px !important;
-            }
-
-            .section-img img {
-                width: 320px !important;
-                height: auto !important;
-            }
-
-            .team-img img {
-                width: 100% !important;
-                height: auto !important;
-            }
+        .content {
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
         }
 
-        @media only screen and (max-width: 479px) {
-            .main-header {
-                font-size: 18px !important;
+        .transaction-details {
+            background-color: #f8fafc;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .detail-row {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            width: 150px;
+            color: #4a5568;
+        }
+
+        .amount {
+            font-size: 24px;
+            font-weight: bold;
+
+            color: {
+                    {
+                    $transactionType ==='credit' ? '#38a169': '#e53e3e'
+                }
             }
 
-            .main-section-header {
-                font-size: 26px !important;
+            ;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #718096;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 3px 10px;
+
+            background-color: {
+                    {
+                    $transactionType ==='credit' ? '#c6f6d5': '#fed7d7'
+                }
             }
 
-            .divider img {
-                width: 280px !important;
+            ;
+
+            color: {
+                    {
+                    $transactionType ==='credit' ? '#22543d': '#742a2a'
+                }
             }
 
-            .container590 {
-                width: 280px !important;
-            }
+            ;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+        }
 
-            .container580 {
-                width: 260px !important;
-            }
-
-            .section-img img {
-                width: 280px !important;
-                height: auto !important;
-            }
+        .copyright {
+            margin-top: 10px;
+            font-size: 11px;
         }
     </style>
-    <!--[if gte mso 9]><style type="text/css">
-        body {
-        font-family: arial, sans-serif!important;
-        }
-        </style>
-    <![endif]-->
 </head>
 
-<body class='respond' leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>
-    <table border='0' width='100%' cellpadding='0' cellspacing='0' bgcolor='#ffffff'>
-        <tr>
-            <td align='center'>
-                <table border='0' align='center' width='590' cellpadding='0' cellspacing='0' class='container590'>
-                    <tr>
-                        <td height='25' style='font-size: 25px; line-height: 25px;'>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td align='center'>
-                            <table border='0' width='100%' cellpadding='0' cellspacing='0'>
-                                <tr>
-                                    <td align='center' height='70' style='height:70px;'>
-                                        <a href=''
-                                            style='display: block; border-style: none !important; border: 0 !important;'>
-                                            <img width='100' border='0' style='display: block; width: 100%;'
-                                                src="{{asset('uploads/logo.png')}}" alt="International Linit Bank" />
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td height='25' style='font-size: 25px; line-height: 25px;'>&nbsp;</td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+<body>
+    <div class="header">
+        <h2>International Linit Bank</h2>
+        <div class="bank-description">
+            Your trusted global banking partner since 1985 - Providing innovative financial solutions worldwide
+        </div>
+    </div>
 
-    <table border='0' width='100%' cellpadding='0' cellspacing='0'>
-        <tr>
-            <td align='center'>
-                <table border='0' align='center' width='590' cellpadding='0' cellspacing='0' class='container590'>
-                    <tr>
-                        <td align="left"
-                            style="color: #888888; font-size: 16px; font-family: Arial, sans-serif; line-height: 24px;">
+    <div class="content">
+        <h3>Hello {{ $user->name }},</h3>
 
-                            <p>Dear {{ $user->name }},</p>
-                            <p>Your account has been {{ $transactionType }}ed with the following details:</p>
-                            <ul>
-                                <li>Amount: {{ $user->currency ?? '$' }}{{ number_format($amount, 2) }} </li>
-                                <li>Category: {{ $type }}</li>
-                                <li>Type: {{ $transactionType }}</li>
+        <p>Your {{ $type }} account has been {{ $transactionType }}ed with the following details:</p>
 
-                            </ul>
-                            <p>Thank you for using our service!</p>
-                            <p>Kind Regards,<br>International Linit Bank.</p>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+        <div class="amount">
+            {{ $currency }}{{ number_format($amount, 2) }}
+        </div>
 
-    <table border='0' width='100%' cellpadding='0' cellspacing='0' bgcolor='f4f4f4'>
-        <tr>
-            <td height='25' style='font-size: 25px; line-height: 25px;'>&nbsp;</td>
-        </tr>
-        <tr>
-            <td align='center'>
-                <table border='0' align='center' width='590' cellpadding='0' cellspacing='0' class='container590'>
-                    <tr>
-                        <td>
-                            <table border='0' align='left' cellpadding='0' cellspacing='0' class='container590'>
-                                <tr>
-                                    <td align='left'
-                                        style='color: #aaaaaa; font-size: 14px; font-family: "Work Sans", Calibri, sans-serif; line-height: 24px;'>
-                                        <div style='line-height: 24px;'>
-                                            <span style='color: #333333;'>Copyright 2024 - All Rights Reserved</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                            <table border='0' align='right' cellpadding='0' cellspacing='0' class='container590'>
-                                <tr>
-                                    <td align='center'>
-                                        <table align='center' border='0' cellpadding='0' cellspacing='0'>
-                                            <tr>
-                                                <td align='center'>
-                                                    <a style='font-size: 14px; font-family: "Work Sans", Calibri, sans-serif; line-height: 24px;color: #5caad2; text-decoration: none;font-weight:bold;'
-                                                        href=''>UNSUBSCRIBE</a>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td height='25' style='font-size: 25px; line-height: 25px;'>&nbsp;</td>
-        </tr>
-    </table>
+        <div class="transaction-details">
+            <div class="detail-row">
+                <span class="detail-label">Transaction ID:</span>
+                <span>{{ $transactionId }}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Date & Time:</span>
+                <span>{{ $transactionDate }}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Account Type:</span>
+                <span>{{ $type }}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Transaction Type:</span>
+                <span>{{ ucfirst($transactionType) }} <span class="status-badge">{{ $status }}</span></span>
+            </div>
+        </div>
+
+        <p>If you have any questions about this transaction, please contact our support team.</p>
+
+        <p>Thank you for banking with International Linit Bank!</p>
+
+        <div class="footer">
+            <p>International Linit Bank Limited is registered in England and Wales with company number 04260907.</p>
+            <p>Authorised and regulated by the Financial Conduct Authority under the Electronic Money Regulations 2011.
+            </p>
+            <div class="copyright">
+                © {{ date('Y') }} International Linit Bank Limited. International Linit Bank is a registered trademark
+                of ILB Ltd. All rights reserved.
+            </div>
+            <p>This is an automated message, please do not reply directly to this email.</p>
+        </div>
+    </div>
 </body>
 
 </html>

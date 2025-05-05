@@ -192,7 +192,7 @@
                                 <li><strong>Type:</strong> {{ $type }} withdrawal</li>
                                 <li><strong>Status:</strong> {{ $transactionType === 'Credit' ? 'Completed' : 'Rejected'
                                     }}</li>
-                            </ul>
+                            </ul> 
                             <p>Thank you for using our service!</p>
                             <p>Kind Regards,<br>International Linit Bank.</p>
                         </td>
