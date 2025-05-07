@@ -159,12 +159,12 @@
                                     {{ $currency }}{{ number_format($amount, 2) }}
                                 </p>
                             </div>
-                            <div>
+                            {{-- <div>
                                 <p style="margin: 0; color: #718096;">Account Balance</p>
                                 <p style="margin: 0.5rem 0 0 0; font-size: 1.5rem; font-weight: 600; color: #1A237E;">
                                     {{ $currency }}{{ number_format($user->account_balance, 2) }}
                                 </p>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
