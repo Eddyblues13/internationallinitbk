@@ -269,6 +269,7 @@
                             </div>
                         </div>
 
+                        {{--
                         <!-- Transaction Timeline -->
                         <div style="background: #F7FAFC; padding: 1.5rem; border-radius: 6px;">
                             <h4 style="color: #718096; margin: 0 0 0.5rem 0; font-size: 0.9rem;">Processing Timeline
@@ -307,7 +308,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <!-- Security & Compliance -->
                         <div style="background: #F7FAFC; padding: 1.5rem; border-radius: 6px;">
@@ -322,13 +323,13 @@
                                 <div>
                                     <span style="color: #718096; font-size: 0.9rem;">Device Fingerprint</span>
                                     <p style="margin: 0; font-weight: 500; color: #2D3748;">
-                                        {{ $deviceHash ?? '8f4d3e2a1b...' }}
+                                        8f4d3e2a1b...
                                     </p>
                                 </div>
                                 <div>
                                     <span style="color: #718096; font-size: 0.9rem;">Geo-Location</span>
                                     <p style="margin: 0; font-weight: 500; color: #2D3748;">
-                                        {{ $geoLocation ?? 'New York, US (40.7128° N, 74.0060° W)' }}
+                                        New York, US (40.7128° N, 74.0060° W)
                                     </p>
                                 </div>
                             </div>
