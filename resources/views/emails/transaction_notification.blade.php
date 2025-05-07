@@ -294,9 +294,7 @@
                                     </div>
                                     <div>
                                         <p style="margin: 0; font-weight: 500; color: #2D3748;">Authorized</p>
-                                        <p style="margin: 0; color: #718096; font-size: 0.8rem;">
-                                            {{ $transactionDate->subMinutes(10)->format('D, M j, Y H:i') }} UTC
-                                        </p>
+
                                     </div>
                                 </div>
                                 <div style="display: flex; align-items: center; gap: 1rem;">
