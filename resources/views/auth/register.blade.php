@@ -217,7 +217,7 @@
                                                 toastr.success("{{ session('success') }}");
                                             </script>
                                             @endif
- 
+
                                             @if(session('error'))
                                             <script>
                                                 toastr.error("{{ session('error') }}");
@@ -441,6 +441,8 @@
                                                                     <option value="$">US Dollar (USD)</option>
                                                                     <option value="€">Euro (EUR)</option>
                                                                     <option value="£">Pound Sterling (GBP)</option>
+                                                                    <option value="P">Botswana Pula (BWP)</option>
+                                                                    
                                                                     <option value="¥">Japanese Yen (JPY)</option>
                                                                     <option value="₹">Indian Rupee (INR)</option>
                                                                     <option value="₦">Nigerian Naira (NGN)</option>
