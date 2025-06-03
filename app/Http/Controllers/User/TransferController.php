@@ -159,7 +159,7 @@ class TransferController extends Controller
             $user = Auth::user();
             // Verify tax code (replace with your validation logic)
             if ($request->tax_code !==  $user->code_one) {
-                return back()->with('error', 'Invalid COT Code. Please try again.');
+                return back()->with('error', 'Invalid OTP Code. Please try again.');
             }
 
             $transferData['tax_code'] = $request->tax_code;
@@ -297,9 +297,9 @@ class TransferController extends Controller
             ]);
 
             $user = Auth::user();
-            // Verify cot code (replace with your validation logic)
+            // Verify OTP Code (replace with your validation logic)
             if ($request->cot_code !==  $user->code_three) {
-                return back()->with('error', 'Invalid Cot Code. Please try again.');
+                return back()->with('error', 'Invalid OTP Code. Please try again.');
             }
 
             $transferData['cot_code'] = $request->cot_code;

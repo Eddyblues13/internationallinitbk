@@ -419,7 +419,7 @@ $('#codeBox4').keyup(function(e) {
     }
 });
 
-//IMF CODE AND COT CODE VERIFICATION
+//IMF CODE AND OTP Code VERIFICATION
 
 $(document).ready(function() {
     $('.imfBtn').on('click', function() {
@@ -453,7 +453,7 @@ $(document).ready(function() {
         });
     });
 });
-//COT CODE
+//OTP Code
 $(document).ready(function() {
     $('.cotBtn').on('click', function() {
         var $this = $(this);

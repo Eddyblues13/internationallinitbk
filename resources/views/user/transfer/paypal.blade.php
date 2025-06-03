@@ -83,8 +83,8 @@
                             </small>
                         </h5>
                         <hr>
-                  
-                            <form method="POST" action="{{ route('transfer.process') }}" id="transferForm">
+
+                        <form method="POST" action="{{ route('transfer.process') }}" id="transferForm">
                             @csrf
                             <input type="hidden" name="type" value="paypal">
                             <input type="hidden" name="user_id" value="{{ auth()->id() }}">
@@ -382,7 +382,7 @@
                                         class="fa fa-info-circle text-danger image-block imaged w48"></span>
                                     <div> <strong>Security Tip</strong>
                                         <p class="text-black">We will NEVER ask you to provide your security
-                                            details such as COT Code or any sensitive details of your account.
+                                            details such as OTP Code or any sensitive details of your account.
                                         </p>
                                     </div>
                                 </div>

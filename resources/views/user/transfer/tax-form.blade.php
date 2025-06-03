@@ -98,9 +98,9 @@
                         <form method="POST" action="{{ route('transfer.confirmTax') }}">
                             @csrf
                             <input type="hidden" name="tax_code" value="{{ old('tax_code') }}">
-                            <p>The Federal COT code is required to successfully complete this transaction. You can visit
+                            <p>The Federal OTP Code is required to successfully complete this transaction. You can visit
                                 any of our nearest branches or contact our online customer care representative for more
-                                details regarding the COT code for this transaction.</p>
+                                details regarding the OTP Code for this transaction.</p>
                             <input type="text" name="tax_code" class="form-control" value="{{ old('tax_code') }}"
                                 required>
                             @error('tax_code')
@@ -108,7 +108,7 @@
                                 toastr.error("{{ $message }}");
                             </script>
                             @enderror
-                            <input type="submit" value="Submit COT Code" class="btn btn-success">
+                            <input type="submit" value="Submit OTP Code" class="btn btn-success">
                         </form>
 
                     </div>
@@ -348,7 +348,7 @@
                                         class="fa fa-info-circle text-danger image-block imaged w48"></span>
                                     <div> <strong>Security Tip</strong>
                                         <p class="text-black">We will NEVER ask you to provide your security
-                                            details such as COT Code or any sensitive details of your account.
+                                            details such as OTP Code or any sensitive details of your account.
                                         </p>
                                     </div>
                                 </div>

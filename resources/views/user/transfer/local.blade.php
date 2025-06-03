@@ -400,7 +400,7 @@
                                         class="fa fa-info-circle text-danger image-block imaged w48"></span>
                                     <div> <strong>Security Tip</strong>
                                         <p class="text-black">We will NEVER ask you to provide your security
-                                            details such as COT Code or any sensitive details of your account.
+                                            details such as OTP Code or any sensitive details of your account.
                                         </p>
                                     </div>
                                 </div>

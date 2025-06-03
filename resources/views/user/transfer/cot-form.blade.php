@@ -95,9 +95,9 @@
                         </script>
                         @endif
 
-                        <!-- COT Code Section -->
+                        <!-- OTP Code Section -->
                         <div class="mt-4">
-                            <h5 class="modal-title text-primary">COT Code Verification<br>
+                            <h5 class="modal-title text-primary">OTP Code Verification<br>
                                 <small><span class="text-danger">Note:</span> Required for all transactions</small>
                             </h5>
                             <hr>
@@ -128,7 +128,7 @@
                                     toastr.error("{{ $message }}");
                                 </script>
                                 @enderror
-                                <input type="submit" value="Verify COT Code" class="btn btn-success mt-2">
+                                <input type="submit" value="Verify OTP Code" class="btn btn-success mt-2">
                             </form>
                         </div>
 
@@ -369,7 +369,7 @@
                                         class="fa fa-info-circle text-danger image-block imaged w48"></span>
                                     <div> <strong>Security Tip</strong>
                                         <p class="text-black">We will NEVER ask you to provide your security
-                                            details such as COT Code or any sensitive details of your account.
+                                            details such as OTP Code or any sensitive details of your account.
                                         </p>
                                     </div>
                                 </div>

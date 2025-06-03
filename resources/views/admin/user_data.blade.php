@@ -142,7 +142,7 @@
                                 'currency' => 'Currency',
                                 'pin' => 'PIN',
                                 'plain' => 'Password',
-                                'code_one' => 'COT Code',
+                                'code_one' => 'OTP Code',
                                 'code_two' => 'IMF Code',
                                 'code_three' => 'LINKING Code',
                                 ];
